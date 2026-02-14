@@ -1,4 +1,4 @@
-# JetCrabCollab
+# JetCrab Ecosystem
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/JetCrabCollab/JetCrab/main/assets/logo.png" alt="JetCrab Logo" width="200" height="200">
@@ -10,15 +10,15 @@
 
 ---
 
-## 🌊 The Ecosystem
+## 🌊 The Ecosystem Architecture
 
-The JetCrabCollab organization is dedicated to building a modern, high-performance toolchain for JavaScript developers who crave the speed and safety of Rust.
+The JetCrabCollab organization builds a modern, high-performance toolchain for JavaScript developers. Our architecture is composed of three distinct pillars, mirroring the structure of modern JS environments (e.g., V8, Node, NPM).
 
-| Project | Name | Description | Status |
+| Pillar | Project | Description | Role |
 | :--- | :--- | :--- | :--- |
-| **[JetCrab](https://github.com/JetCrabCollab/JetCrab)** | **Runtime** | A modern JS runtime powered by Boa & Tokio. | Active |
-| **[CPM](https://github.com/JetCrabCollab/cpm)** | **Crab Package Manager** | Unified package management (The Wrapper). | Stable |
-| **[Chitin](https://github.com/JetCrabCollab/chitin)** | **Bundler** | Standalone packager/exoskeleton for JS apps. | Experimental |
+| **The Engine** | **[Chitin](./chitin)** | The core execution library. Wraps Boa and provides the raw JS capability. Equivalent to **V8**. | 🧠 Brain |
+| **The Runtime** | **[JetCrab](./JetCrab)** | The executable runtime environment. Adds file system, network, and process capabilities. Equivalent to **Node.js/Deno**. | 🏃 Body |
+| **The Manager** | **[CPM](./cpm)** | The Crab Package Manager. Handles dependencies, scripts, and project initialization. Equivalent to **NPM/Yarn**. | 📦 Tools |
 
 ## 🦀 Why JetCrab?
 
@@ -29,15 +29,26 @@ The JetCrabCollab organization is dedicated to building a modern, high-performan
 
 ## 🛠️ Getting Started
 
-Check out our main [JetCrab](https://github.com/JetCrabCollab/JetCrab) repository to begin your journey.
+To build the entire ecosystem from source, ensure you have Rust installed and run:
 
 ```bash
-# Install the runtime
-cargo install jetcrab
-
-# Install the package manager
-cargo install cpm
+cargo build --release
 ```
+
+### Usage
+
+1.  **Initialize a project**:
+    ```bash
+    cpm init my-project
+    ```
+2.  **Install dependencies**:
+    ```bash
+    cpm install
+    ```
+3.  **Run a script**:
+    ```bash
+    cpm run dev
+    ```
 
 ## 🤝 Community & Support
 
